@@ -1,48 +1,52 @@
 ---
 layout: post
-current: post
-cover: assets/images/water.jpg
-navigation: True
-title: The Businessman & The Fisherman
-date: 2014-08-12 10:18:00
-tags: fables
-class: post-template
-subclass: 'post tag-fables'
-logo: assets/images/ghost.png
-author: hannah
+cover: assets/images/note.jpg
+title: MemE를 만들기까지...
 ---
+이번 포스팅은 라즈베리파이를 통해 셋톱박스형 mp3인 MemE를 만든 과정에 대해 적었습니다.
 
-An American businessman took a vacation to a small coastal Mexican village on doctor’s orders. Unable to sleep after an urgent phone call from the office the first morning, he walked out to the pier to clear his head. A small boat with just one fisherman had docked, and inside the boat were several large yellowfin tuna. The American complimented the Mexican on the quality of his fish.
+수행과제 : mp3플레이어 제작, 버튼을 통해 여러가지 기능 구현(재생,멈춤,노래 바꾸기 등등...), LCD모니터를 통해 노래 제목과 가수 출력, 서버를 만들어 스트리밍, 3D프린터를 통해 케이스 제작
 
-“How long did it take you to catch them?” the American asked.
+9/24(일)
+조원들과 처음으로 만나서 mp3제작을 시작한 날,
+라즈베리파이와 빵판,버튼을 연결하여 mp3제작의 기본적인 틀을 만들었고
+라즈비안에서 노래재생을 위한 기본적인 코드를 작성했다.
 
-“Only a little while,” the Mexican replied in surprisingly good English.
+9/25(월)
+mp3플레이어의 가장 기본적인 기능인 일시정지, 재생, 정지 버튼을
+python의 get_state()함수를 통해 구현하였다.
 
-“Why don’t you stay out longer and catch more fish?” the American then asked.
+9/26(화)
+버튼을 눌러 재생중인 노래를 다음곡/이전곡으로 변경할 수 있는 기능을 추가하였다. 1차 시연이 당장 다음날이라 서버구현은 시도하지 못했다.
 
-“I have enough to support my family and give a few to friends,” the Mexican said as he unloaded them into a basket.
+9/27(수)
+래피드 프로토타입한 mp3제품을 시연하는 날이었다.
+그동안 우리가 만든것들을 교수님과 학우들에게 보여주고 싶었지만
+5분이라는 시연시간동안 라즈베리파이가 부팅이 되지않아 그럴수 없었다.
+후에 LCD모니터와 빵판 연결이 잘못되었다는 것을 파악했고 아쉽지만 시연을 그 주 일요일날 영상으로 대체하여 포털에 업로드하였다.
 
-“But… What do you do with the rest of your time?”
+10/19(목)
+처음으로 서버구현을 시도했다.
+블로그에 나온대로 openmediavault서버의 비밀번호를 바꿨다가 먹통이 되어 포맷을 3번정도 했었다. 그후에도 잘 진행이 되지 않아 서버제작은 보류했다.
 
-The Mexican looked up and smiled. “I sleep late, fish a little, play with my children, take a siesta with my wife, Julia, and stroll into the village each evening, where I sip wine and play guitar with my amigos. I have a full and busy life, señor.”
+10/26(목)
+다같이 모이기에는 조원들 시간이 잘 안맞아서 우선 라즈베리파이에 있는 코드를 밖으로 빼서 조원들과 코드 분석을 하기로 했다.
+또한 각자 역할을 나눠서 구현해야하는 부분을 공부하기로 했다
+내가 맡은 파트는 서버구현이였다.
 
-The American laughed and stood tall. “Sir, I’m a Harvard M.B.A. and can help you. You should spend more time fishing, and with the proceeds, buy a bigger boat. In no time, you could buy several boats with the increased haul. Eventually, you would have a fleet of fishing boats.”
+11/9(목)
+서버를 구현하기 위해 IoT실에 모였지만 갑자기 와이파이 기능이 되지 않았다. 라즈베리파이의 문젠줄알고 다른 라즈베리파이로도 시험해보고 포맷까지 해봤지만 와이파이가 되지않아 집에 가져가서 실행시켜봤지만 역시 와이파이기능이 먹통이었다.
 
-He continued, “Instead of selling your catch to a middleman, you would sell directly to the consumers, eventually opening your own cannery. You would control the product, processing, and distribution. You would need to leave this small coastal fishing village, of course, and move to Mexico City, then to Los Angeles, and eventually to New York City, where you could run your expanded enterprise with proper management.
+11/30(목)
+오픈소스 실습시간에 배운 라이노 프로그램을 통해 mp3플레이어 케이스 제작 모델링을 시작하였다. 우리가 생각한 모양은 피라미드 모양이었다.
 
-The Mexican fisherman asked, “But, señor, how long will all this take?”
+12/1(금)
+와이파이 기능은 정상적으로 돌아왔지만 서버를 구현하기엔 시간이 너무 부족해서 노래를 로컬에 저장하고 버튼을 누를때마다 다른 장르로 넘어가는 식으로 프로그램을 바꾸었다. 내가 맡은 파트였던 서버구현이 안됐기에 채널변경 코드를 집중적으로 짰다.
 
-To which the American replied, “15-20 years, 25 tops.”
-
-“But what then, señor?”
-
-The American laughed and said, “That’s the best part. When the time is right, you would announce an IPO and sell your company stock to the public and become very rich. You would make millions.”
-
-“Millions señor? Then what?"
-
-“Then you would retire and move to a small coastal fishing village, where you would sleep late, fish a little, play with your kids, take a siesta with your wife, and stroll in to the village in the evenings where you could sip wine and play your guitar with your amigos.”
-
-
-Adapted from the "Anekdote zur Senkung der Arbeitsmoral" by **Heinrich Böll**
-
-An influential German write and Nobel Prize for Literature in 1972.
+12.5(화)
+3D프린터를 통해 케이스 제작을 완성했다.
+케이스 안에 기판,빵판,LCD등을 넣어 mp3제작을 완성했다.
+.......
+이렇게 보니 한학기동안 정말 고생했다는 생각도 들고
+처음 문제를 접근할때는 막막하기만 했던것이 자꾸 시도하고 실패하다보니 어느새 완성된다는것도 신기합니다.
+이맛에 PBL하는게 아닌가....ㅎㅎ
